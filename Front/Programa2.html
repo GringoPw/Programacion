@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diagnosticador de Enfermedades</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <div class="grid grid-cols-3 gap-4">
+            <div>
+                <h2 class="text-lg font-semibold mb-4">Síntomas del Dengue:</h2>
+                <label class="flex items-center mb-2"><input type="checkbox" id="fiebre" class="mr-2">Fiebre moderada a alta</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="dolorOjos" class="mr-2">Dolor en los ojos</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="malestarGen" class="mr-2">Malestar general</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="dolorCabeza" class="mr-2">Dolor de cabeza intenso</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="dolorMuscular" class="mr-2">Dolor muscular</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="dolorArticular" class="mr-2">Dolor en las articulaciones</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="dolorHuesos" class="mr-2">Dolor en los huesos</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="nauseas" class="mr-2">Náuseas</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="vomitos" class="mr-2">Vómitos</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="cansancio" class="mr-2">Cansancio intenso</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="sarpullidos" class="mr-2">Aparición de sarpullidos en la piel</label>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold mb-4">Síntomas de la Gripe Común (Congestión):</h2>
+                <label class="flex items-center mb-2"><input type="checkbox" id="congestionNasal" class="mr-2">Congestión nasal</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="tos" class="mr-2">Tos</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="dolorGarganta" class="mr-2">Dolor de garganta</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="estornudos" class="mr-2">Estornudos</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="fatiga" class="mr-2">Fatiga</label>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold mb-4">Síntomas de la Hepatitis:</h2>
+                <label class="flex items-center mb-2"><input type="checkbox" id="ictericia" class="mr-2">Ictericia (coloración amarillenta de la piel y los ojos)</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="fatigaHep" class="mr-2">Fatiga</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="dolorAbdominal" class="mr-2">Dolor abdominal</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="nauseasHep" class="mr-2">Náuseas y vómitos</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="orinaOscura" class="mr-2">Orina oscura</label>
+                <label class="flex items-center mb-2"><input type="checkbox" id="hecesClaras" class="mr-2">Heces claras</label>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-lg font-semibold mb-4">Agregar Síntomas:</h2>
+            <div class="flex mb-4">
+                <input type="text" id="nuevoSintoma" class="mr-2 px-4 py-2 border border-gray-300 rounded-md" placeholder="Agregar síntoma...">
+                <select id="enfermedad" class="px-4 py-2 border border-gray-300 rounded-md">
+                    <option value="dengue">Dengue</option>
+                    <option value="gripe">Gripe Común (Congestión)</option>
+                    <option value="hepatitis">Hepatitis</option>
+                </select>
+                <button onclick="agregarSintoma()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded">Agregar</button>
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Diagnosticar</button>
+        </div>
+    </div>
+    <script>
+        function agregarSintoma() {
+            var nuevoSintoma = document.getElementById("nuevoSintoma").value;
+            var enfermedad = document.getElementById("enfermedad").value;
+
+            
+            console.log("Nuevo síntoma:", nuevoSintoma);
+            console.log("Enfermedad relacionada:", enfermedad);
+        }
+    </script>
+    <script>
+        function agregarSintoma() {
+            var nuevoSintoma = document.getElementById("nuevoSintoma").value;
+            var enfermedad = document.getElementById("enfermedad").value;
+
+            //para ver
+            console.log("Nuevo síntoma:", nuevoSintoma);
+            console.log("Enfermedad relacionada:", enfermedad);
+
+            // cambio la img x la enfermedad
+            var imagenEnfermedad = document.getElementById("imagenEnfermedad");
+            if (enfermedad === "dengue") {
+                imagenEnfermedad.src = "iDengue.png";
+            } else if (enfermedad === "gripe") {
+                imagenEnfermedad.src = "iGripe.png";
+            } else if (enfermedad === "hepatitis") {
+                imagenEnfermedad.src = "iHepatitis.png";
+            }
+        }
+    </script>
+</body>
+
+</html>

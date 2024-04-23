@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diagnosticador de Enfermedades</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+      <h1 class="text-3xl font-bold text-center mb-2">ConsultorIA - Médico</h1>
+      <h2 class="mb-2 text-2xl font-semibold text-center">Síntomas</h2>
+      <div class="grid grid-cols-4 grid-flow-row gap-4" id="todosLosSintomas">
+        <!-- ACA ESTAN LOS SINTOMAS -->
+      </div>
+      <div class="text-center">
+        <button
+          class="m-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+          onclick="capturarSintomas()"
+        >
+          Diagnosticar
+        </button>
+      </div>
+
+      <div class="fixed bottom-0 right-0 w-full bg-gray-500 p-2">
+        <h3 class="text-lg text-white font-semibold mb-4">Agregar síntoma:</h3>
+        <div class="flex mb-4">
+          <input
+            type="text"
+            id="nuevoSintoma"
+            class="mr-2 px-4 py-2 border border-gray-300 rounded-md"
+            placeholder="Agregar síntoma..."
+          />
+          <button
+            onclick="agregarSintoma()"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded"
+          >
+            Agregar
+          </button>
+        </div>
+        <h3 class="text-lg text-white font-semibold mb-4">
+          Agregar una enfermedad:
+        </h3>
+        <div class="flex mb-4">
+          <input
+            type="text"
+            id="nuevaEnfermedad"
+            class="mr-2 px-4 py-2 border border-gray-300 rounded-md"
+            placeholder="Agregar enfermedad..."
+          />
+          <button
+            onclick="agregarEnfermedad()"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded"
+          >
+            Agregar
+          </button>
+        </div>
+        <h3 class="text-lg text-white font-semibold mb-4">
+          Agregar sintomas seleccionados a una enfermedad:
+        </h3>
+        <div class="flex mb-4">
+          <select class="w-52" id="enfermedad"></select>
+
+          <button
+            onclick="agregarSintomasAEnfermedad()"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded"
+          >
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../Back/scripts.js"></script>
+  </body>
+</html>
